@@ -14,12 +14,6 @@ $app->match('/', function () use ($app) {
     return $app['twig']->render('home/index.html.twig');
 });
 
-$app->match('/zob', function () use ($app) {
-$app['session']->getFlashBag()->add('info', 'Your changes were saved!');
-$app['session']->getFlashBag()->add('info', 'You should take a break.');
-return $app['twig']->render('home/index.html.twig');
-});
-
 $app->match('/multi', function () use ($app) {
     $number = 1;
     
