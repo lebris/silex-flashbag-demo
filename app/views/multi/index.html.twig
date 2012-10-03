@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+{% set active = "multi" %}
+
+{% block main %}
+
+<div class="row">
+    <form action="" method="post" novalidate {{ form_enctype(form) }} class="form-inline well span3">
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">{{ 'Send'|trans }}</button>
+    </form>
+</div>
+<p>This example use <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap CSS Framework</a>.</p>
+<p>Read the <a href="http://symfony.com/doc/current/book/controller.html#flash-messages" target="_blank">Symfony2 documantation</a> for more infos.</p>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Silex flashBag Demo</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="{{ app.request.basepath }}/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ app.request.basepath }}/css/styles.css">
+  {% block stylesheets %}{% endblock %}
+
+  <script src="js/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="{{ app.request.basepath }}/">Silex flashBag demo</a>
+          <ul class="nav">
+              <li{% if active=="multi" %} class="active"{% endif %}><a href="{{ app.request.basepath }}/multi">Multi-alerts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+          
+  <div class="container">
+      
+    {% include 'common/alerts.html.twig' %}
+      
+    <div role="main">
+{% block main %}{% endblock %}
+    </div>
+    <footer>
+{% block footer %}{% endblock %}
+    </footer>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <script src="{{ app.request.basepath }}/bootstrap/js/bootstrap.min.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

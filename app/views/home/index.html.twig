@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+{% set active = "home" %}
+
+{% block main %}
+
+<p>Use links in the navbar for more examples.</p>
+<h2>How it works</h2>
+<p>Silex use <a href="http://silex.sensiolabs.org/doc/providers/session.html">Symfony2/Session</a>.</p>
+<p>Since Symfony 2.1 released, flashBag store flasMessages and you can add more than 1 alert of the same type.</p>
+<pre>
+    $app['session']->getFlashBag()->add(
+        'error',
+        array(
+            'title'   => 'Error : This is a example.',
+            'message' => 'Change the number of errors you want to display.',
+        )
+    );
+</pre>
+<p>Available type of alert, based on Twitter Bootstrap : error, warning, info, success</p>
+<p>You can add as many alerts as you need, of the same type or not.</p>
+<p>This example use <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap CSS Framework</a>.</p>
+<p>Read the <a href="http://symfony.com/doc/current/book/controller.html#flash-messages" target="_blank">Symfony2 documantation</a> for more infos.</p>
+{% endblock %}
